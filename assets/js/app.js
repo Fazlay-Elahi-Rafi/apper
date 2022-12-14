@@ -6,6 +6,12 @@ function anyFun() {
   loader.classList.add("dispear");
 }
 
+// ----- NAVBAR SCROLL ------
+
+window.addEventListener("scroll", function () {
+  var menu = this.document.querySelector(".menu");
+  menu.classList.toggle("sticky", window.scrollY > 0);
+});
 
 // --------> Scrool Top <--------
 $(document).ready(function () {
@@ -97,24 +103,25 @@ $(".interface__slider").slick({
   dots: true,
   responsive: [
     {
-      breakpoint: 991,
+      breakpoint: 1199,
       settings: {
         arrows: false,
         slidesToShow: 3,
       },
     },
     {
-      breakpoint: 575,
+      breakpoint: 767,
       settings: {
         arrows: false,
         slidesToShow: 2,
+        centerMode: false,
       },
     },
     {
-      breakpoint: 480,
+      breakpoint: 575,
       settings: {
         arrows: false,
-        slidesToShow: 2,
+        slidesToShow: 1,
       },
     },
   ],
